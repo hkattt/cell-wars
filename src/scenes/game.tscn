@@ -25,3 +25,7 @@ navigation_polygon = SubResource("NavigationPolygon_yqjtg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game Boundary" unique_id=1352259913]
 position = Vector2(583.5, 326.5)
 shape = SubResource("RectangleShape2D_yqjtg")
+
+[node name="Label" type="Label" parent="." unique_id=105346954]
+offset_right = 40.0
+offset_bottom = 23.0

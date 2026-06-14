@@ -1,5 +1,7 @@
 class_name Vampire extends CharacterBody2D
 
+@onready var hit_box: HitBox = $HitBox
+
 const vampire_scene: PackedScene = preload("res://scenes/enemies/vampire/vampire.tscn")
 
 const MAX_SPEED: float = 50
@@ -19,3 +21,6 @@ static func create(p_target: Node2D, p_position: Vector2) -> Vampire:
 	
 func _ready() -> void:
 	pass
+
+func _on_health_health_depleted() -> void:
+	queue_free()
