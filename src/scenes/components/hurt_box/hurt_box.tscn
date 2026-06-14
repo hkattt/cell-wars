@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cipsggrpvr0qo"]
+
+[ext_resource type="Script" uid="uid://t75q1qfs13ta" path="res://scenes/components/hurt_box/hurt_box.gd" id="1_8i2d1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xit"]
+size = Vector2(1, 1)
+
+[node name="HurtBox" type="Area2D" unique_id=1840764264 groups=["hurt_boxes"]]
+script = ExtResource("1_8i2d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1866173375]
+shape = SubResource("RectangleShape2D_p0xit")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

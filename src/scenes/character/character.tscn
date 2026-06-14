@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://qqrkrcp8jb3" path="res://scenes/character/character.gd" id="1_6nn2t"]
 [ext_resource type="PackedScene" uid="uid://cbq6qn2crmnhu" path="res://scenes/gun/gun.tscn" id="2_cuyo6"]
+[ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="3_fgi2k"]
+[ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="4_f8hpl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxwtt"]
 
@@ -16,3 +18,10 @@ polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
 shape = SubResource("RectangleShape2D_nxwtt")
 
 [node name="Gun" parent="." unique_id=870551047 instance=ExtResource("2_cuyo6")]
+
+[node name="Health" parent="." unique_id=1988655922 instance=ExtResource("3_fgi2k")]
+health = 100.0
+
+[node name="HitBox" parent="." unique_id=792065303 node_paths=PackedStringArray("health") instance=ExtResource("4_f8hpl")]
+health = NodePath("../Health")
+box_size = Vector2(20, 20)

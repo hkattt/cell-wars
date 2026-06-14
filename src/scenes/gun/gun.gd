@@ -2,8 +2,8 @@ class_name Gun extends Node2D
 
 var memory_cells: Array[Enums.MemoryCell] = [
 	Enums.MemoryCell.WHITE, 
-	Enums.MemoryCell.RED,
-	Enums.MemoryCell.GREEN
+	#Enums.MemoryCell.RED,
+	#Enums.MemoryCell.GREEN
 ]
 
 func create_bullet(memory_cell: Enums.MemoryCell, bullet_position: Vector2, direction: Vector2) -> Bullet:
