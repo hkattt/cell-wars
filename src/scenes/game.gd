@@ -9,7 +9,7 @@ func _ready() -> void:
 	game_arena.start()
 
 func _on_wave_complete() -> void:
-	upgrade_menu.visible = true
+	upgrade_menu.open()
 
-func _on_close_menu() -> void:
+func _on_close_menu(_upgrade: Enums.Upgrade) -> void:
 	game_arena.start()

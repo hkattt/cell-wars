@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b00oe8be35cde"
-path="res://.godot/imported/circle-blue.png-bb89adb85f63fabf3432a14e7a0dbf14.ctex"
+uid="uid://bc65i2668mdkw"
+path="res://.godot/imported/rectangle-mutation.png-af603db4a6d746abc6d6fcc687e79c17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/mutations/circle-blue.png"
-dest_files=["res://.godot/imported/circle-blue.png-bb89adb85f63fabf3432a14e7a0dbf14.ctex"]
+source_file="res://assets/images/ui/mutations/rectangle-mutation.png"
+dest_files=["res://.godot/imported/rectangle-mutation.png-af603db4a6d746abc6d6fcc687e79c17.ctex"]
 
 [params]
 

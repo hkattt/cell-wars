@@ -10,6 +10,12 @@ var max_health: float
 func _ready() -> void:
 	max_health = health	
 
+func increase_max_health(delta: float) -> void:
+	max_health += delta
+	
+func heal(delta: float) -> void:
+	health = min(health + delta, max_health)
+
 func take_damage(damage: float):
 	health = max(health - damage, 0.0)
 		

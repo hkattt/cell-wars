@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dys1y7tp7kuhs"
-path="res://.godot/imported/circle-white.png-ee8e7c233da03baa9d32871233a7f617.ctex"
+uid="uid://6ccb4kueycw7"
+path="res://.godot/imported/triangle-mutation.png-d763d3d21531773890e8ded8a6811a1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/mutations/circle-white.png"
-dest_files=["res://.godot/imported/circle-white.png-ee8e7c233da03baa9d32871233a7f617.ctex"]
+source_file="res://assets/images/ui/mutations/triangle-mutation.png"
+dest_files=["res://.godot/imported/triangle-mutation.png-d763d3d21531773890e8ded8a6811a1c.ctex"]
 
 [params]
 

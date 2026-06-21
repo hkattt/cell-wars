@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b5u2vory12qm3" path="res://scenes/game_arena/game_arena.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://8t4ca3ggynm1" path="res://assets/images/ui/background/background.png" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dqimpym3tnjpn" path="res://scenes/ui/mem_card/mem_card.tscn" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://b2pb0ls63rwgx" path="res://scenes/managers/upgrade_manager/UpgradeManager.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://dqigngtfxc7dd" path="res://scenes/ui/stat_card/StatCard.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://pstott5nt1ra" path="res://scenes/ui/upgrade-menu/upgrade_menu.tscn" id="6_p57ef"]
 
@@ -16,6 +17,10 @@ texture = ExtResource("3_lnu2h")
 
 [node name="GameArena" parent="." unique_id=496630411 instance=ExtResource("2_yqjtg")]
 position = Vector2(320, 0)
+
+[node name="UpgradeManager" parent="." unique_id=1463412954 node_paths=PackedStringArray("game_arena", "upgrade_menu") instance=ExtResource("4_u5sy4")]
+game_arena = NodePath("../GameArena")
+upgrade_menu = NodePath("../UpgradeMenu")
 
 [node name="GameUI" type="Control" parent="." unique_id=188450023]
 layout_mode = 3
@@ -43,8 +48,10 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameUI/HBoxContainer/LeftPanel" unique_id=1915393692]
+custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 
 [node name="MemCard" parent="GameUI/HBoxContainer/LeftPanel/VBoxContainer" unique_id=194550809 node_paths=PackedStringArray("game_arena") instance=ExtResource("4_iywne")]
 layout_mode = 2
@@ -85,5 +92,6 @@ size_flags_horizontal = 3
 layout_mode = 2
 game_arena = NodePath("../../../../../GameArena")
 
-[node name="UpgradeMenu" parent="." unique_id=691965507 instance=ExtResource("6_p57ef")]
+[node name="UpgradeMenu" parent="." unique_id=691965507 node_paths=PackedStringArray("upgrade_manager") instance=ExtResource("6_p57ef")]
 visible = false
+upgrade_manager = NodePath("../UpgradeManager")

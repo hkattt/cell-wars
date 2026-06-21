@@ -18,3 +18,4 @@ polygon = PackedVector2Array(-3.5, -3.5, -3.5, 3.5, 3.5, 3.5, 3.5, -3.5)
 
 [node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("2_55ddh")]
 box_size = Vector2(7, 7)
+damage_source = 2
