@@ -23,9 +23,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwim3"]
-size = Vector2(50, 25)
-
 [node name="Virus1" type="CharacterBody2D" unique_id=666452032]
 script = ExtResource("1_5ao6s")
 
@@ -52,9 +49,6 @@ health = NodePath("../../Health")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=869744447]
 sprite_frames = SubResource("SpriteFrames_pvsu6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963569828]
-shape = SubResource("RectangleShape2D_vwim3")
-
 [node name="Health" parent="." unique_id=1988655922 instance=ExtResource("6_eyyal")]
 health = 100.0
 
@@ -64,3 +58,9 @@ box_size = Vector2(50, 25)
 [node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("8_wmptb")]
 box_size = Vector2(70, 40)
 damage_source = 4
+
+[node name="Timer" type="Timer" parent="." unique_id=504354675]
+autostart = true
+
+[connection signal="area_exited" from="HurtBox" to="HurtBox" method="_on_area_exited"]
+[connection signal="timeout" from="Timer" to="HurtBox" method="_on_timer_timeout"]
