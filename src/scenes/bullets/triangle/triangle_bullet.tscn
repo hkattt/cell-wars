@@ -2,9 +2,25 @@
 
 [ext_resource type="Script" uid="uid://suq17qcxbv6n" path="res://scenes/bullets/triangle/triangle_bullet.gd" id="1_46yy1"]
 [ext_resource type="PackedScene" uid="uid://cipsggrpvr0qo" path="res://scenes/components/hurt_box/hurt_box.tscn" id="2_wx45k"]
+[ext_resource type="Texture2D" uid="uid://djnyd7ux5upit" path="res://assets/images/bullets/bullet-triangle-2.png" id="3_6un4c"]
+[ext_resource type="Texture2D" uid="uid://p72if7gmlwsd" path="res://assets/images/bullets/bullet-triangle-1.png" id="4_l7fkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ms86t"]
 size = Vector2(5, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6sfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6un4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l7fkj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Triangle Bullet" type="Area2D" unique_id=479000517]
 script = ExtResource("1_46yy1")
@@ -17,3 +33,6 @@ polygon = PackedVector2Array(-2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, -2.5)
 
 [node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("2_wx45k")]
 box_size = Vector2(5, 5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=342798295]
+sprite_frames = SubResource("SpriteFrames_y6sfv")

@@ -1,24 +1,33 @@
 [gd_scene format=3 uid="uid://6c8cgv6sf860"]
 
 [ext_resource type="Script" uid="uid://qqrkrcp8jb3" path="res://scenes/character/character.gd" id="1_6nn2t"]
-[ext_resource type="Texture2D" uid="uid://bm1riylo48wty" path="res://assets/images/character/white-blood-cell-1.png" id="2_7ex5l"]
+[ext_resource type="Texture2D" uid="uid://bmjsygyfj74f5" path="res://assets/images/character/white-blood-cell-b.png" id="2_bblvu"]
 [ext_resource type="PackedScene" uid="uid://cbq6qn2crmnhu" path="res://scenes/gun/gun.tscn" id="2_cuyo6"]
-[ext_resource type="Texture2D" uid="uid://dcau4x0rylkwv" path="res://assets/images/character/white-blood-cell-2.png" id="3_bix7t"]
 [ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="3_fgi2k"]
+[ext_resource type="Texture2D" uid="uid://b4wwld4j3nm4i" path="res://assets/images/character/white-blood-cell-c.png" id="3_q52vl"]
 [ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="4_f8hpl"]
+[ext_resource type="Texture2D" uid="uid://cidc07qf0t445" path="res://assets/images/character/white-blood-cell-a.png" id="4_l884r"]
 [ext_resource type="PackedScene" uid="uid://lfkuhfcvykrv" path="res://scenes/ui/health_bar/health_bar.tscn" id="8_q52vl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bblvu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7ex5l")
+"texture": ExtResource("2_bblvu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_bix7t")
+"texture": ExtResource("3_q52vl")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l884r")
+}],
+"loop": false,
+"name": &"shoot",
 "speed": 5.0
 }]
 
@@ -30,8 +39,7 @@ script = ExtResource("1_6nn2t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1346011936]
 sprite_frames = SubResource("SpriteFrames_bblvu")
-frame = 1
-frame_progress = 0.6894118
+animation = &"shoot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=905806575]
 shape = SubResource("RectangleShape2D_nxwtt")
@@ -60,3 +68,5 @@ grow_vertical = 0
 [node name="HealthBar" parent="UI" unique_id=1671427461 node_paths=PackedStringArray("health") instance=ExtResource("8_q52vl")]
 layout_mode = 2
 health = NodePath("../../Health")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
