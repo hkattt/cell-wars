@@ -10,6 +10,7 @@ class_name MemCard extends Control
 func _ready() -> void:
 	var gun: Gun = game_arena.character.get_gun()
 	gun.memory_cells_changed.connect(_on_memory_cell_changed)
+	var current: Enums.MemoryCell = gun.memory_cells[gun.current_memory_cell_idx]
 	toggle_memory_cell_visibility(gun.get_memory_cells())
 
 func toggle_memory_cell_visibility(memory_cells: Array[Enums.MemoryCell]):
