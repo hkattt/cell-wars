@@ -16,8 +16,8 @@ func _ready() -> void:
 	
 func init(available_mutations: Array[Enums.Mutation]) -> void:
 	var number_of_enemies: int = _compute_number_of_enemies(current_wave)
-	var spawn_time_min: int = 3
-	var spawn_time_max: int = 10
+	var spawn_time_min: int = _compute_spawn_time_min(current_wave)
+	var spawn_time_max: int = _compute_spawn_time_max(current_wave)
 	var max_enemy_mutations: int = _compute_max_enemy_mutations(current_wave)
 	
 	for spawner in spawners:
@@ -36,6 +36,30 @@ func is_wave_running() -> bool:
 
 func get_current_wave() -> int:
 	return current_wave
+
+func _compute_spawn_time_min(wave: int) -> float:
+	if wave < 3:
+		return 3
+	elif wave < 5:
+		return 2.5
+	elif wave < 10:
+		return 2
+	elif wave < 15: 
+		return 1
+	else:
+		return 0.5
+		
+func _compute_spawn_time_max(wave: int) -> float:
+	if wave < 3:
+		return 10
+	elif wave < 5:
+		return 8
+	elif wave < 10:
+		return 6
+	elif wave < 15: 
+		return 5
+	else:
+		return 0.5
 
 func _compute_max_enemy_mutations(wave: int) -> int:
 	if wave < 3:
