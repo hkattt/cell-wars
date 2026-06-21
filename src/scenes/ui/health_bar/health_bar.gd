@@ -7,9 +7,10 @@ func _ready() -> void:
 		if not health.is_node_ready():
 			await health.ready
 			
-	health.took_damage.connect(Callable(_on_took_damage))
+	health.took_damage.connect(Callable(_on_health_changed))
+	health.gained_health.connect(Callable(_on_health_changed))
 	max_value = health.max_health
 	value = health.health
 
-func _on_took_damage():
+func _on_health_changed():
 	value = health.health
