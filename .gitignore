@@ -5,7 +5,7 @@
 
 # Godot-specific ignores
 .import/
-/exports/
+/src/exports/
 export.cfg
 export_credentials.cfg
 *.tmp

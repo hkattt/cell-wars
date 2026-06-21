@@ -2,6 +2,7 @@ class_name Health extends Node2D
 
 signal health_depleted
 signal took_damage
+signal gained_health
 
 @export var health: float
 
@@ -15,6 +16,7 @@ func increase_max_health(delta: float) -> void:
 	
 func heal(delta: float) -> void:
 	health = min(health + delta, max_health)
+	gained_health.emit()
 
 func take_damage(damage: float):
 	health = max(health - damage, 0.0)
