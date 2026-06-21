@@ -3,11 +3,18 @@
 [ext_resource type="Script" uid="uid://qqrkrcp8jb3" path="res://scenes/character/character.gd" id="1_6nn2t"]
 [ext_resource type="Texture2D" uid="uid://bmjsygyfj74f5" path="res://assets/images/character/white-blood-cell-b.png" id="2_bblvu"]
 [ext_resource type="PackedScene" uid="uid://cbq6qn2crmnhu" path="res://scenes/gun/gun.tscn" id="2_cuyo6"]
+[ext_resource type="Shader" uid="uid://b1e2edajtlvmp" path="res://scenes/character/character_hit.gdshader" id="2_q52vl"]
 [ext_resource type="PackedScene" uid="uid://o63rvg4a6cnn" path="res://scenes/components/health/health.tscn" id="3_fgi2k"]
 [ext_resource type="Texture2D" uid="uid://b4wwld4j3nm4i" path="res://assets/images/character/white-blood-cell-c.png" id="3_q52vl"]
 [ext_resource type="PackedScene" uid="uid://bad8vdun64cjm" path="res://scenes/components/hit_box/hit_box.tscn" id="4_f8hpl"]
 [ext_resource type="Texture2D" uid="uid://cidc07qf0t445" path="res://assets/images/character/white-blood-cell-a.png" id="4_l884r"]
 [ext_resource type="PackedScene" uid="uid://lfkuhfcvykrv" path="res://scenes/ui/health_bar/health_bar.tscn" id="8_q52vl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l884r"]
+shader = ExtResource("2_q52vl")
+shader_parameter/flash_color = Color(0.84, 0, 0, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bblvu"]
 animations = [{
@@ -32,12 +39,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxwtt"]
-size = Vector2(70, 70)
+size = Vector2(40, 40)
 
 [node name="Character" type="CharacterBody2D" unique_id=1331352431]
 script = ExtResource("1_6nn2t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1346011936]
+material = SubResource("ShaderMaterial_l884r")
 sprite_frames = SubResource("SpriteFrames_bblvu")
 animation = &"shoot"
 

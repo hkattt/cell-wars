@@ -15,6 +15,9 @@ func _ready() -> void:
 	hit_box.damage_taken.connect(_on_hit_box_damage_taken)
 	health.health_depleted.connect(_on_health_depleted)
 	animated_sprite.play("default")
+	var mat = animated_sprite.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("flash_amount", 0.0)
 	
 func _physics_process(_delta: float) -> void:
 	direction = Vector2(
@@ -44,13 +47,14 @@ func _on_health_depleted() -> void:
 func _on_hit_box_damage_taken(damage_source: Enums.DamageSource) -> void:
 	match damage_source:
 		Enums.DamageSource.VIRUS_1:
-			health.take_damage(2.5)
-		Enums.DamageSource.VIRUS_2:
-			health.take_damage(5)
-		Enums.DamageSource.VIRUS_3:
 			health.take_damage(10)
+		Enums.DamageSource.VIRUS_2:
+			health.take_damage(15)
+		Enums.DamageSource.VIRUS_3:
+			health.take_damage(20)
 		Enums.DamageSource.VIRUS_4:
-			health.take_damage(12.5)
+			health.take_damage(30)
+	flash_animation()
 
 func shoot_animation() -> void:
 	if animated_sprite:
@@ -59,3 +63,9 @@ func shoot_animation() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "shoot":
 		animated_sprite.play("default")
+		
+func flash_animation():
+	var mat = animated_sprite.material as ShaderMaterial
+	mat.set_shader_parameter("flash_amount", 1.0)
+	var tween = create_tween()
+	tween.tween_property(mat, "shader_parameter/flash_amount", 0.0, 0.5)

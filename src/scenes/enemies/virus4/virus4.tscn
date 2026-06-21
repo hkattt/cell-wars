@@ -23,9 +23,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwim3"]
-size = Vector2(90, 80)
-
 [node name="Virus4" type="CharacterBody2D" unique_id=666452032]
 script = ExtResource("1_elfd0")
 
@@ -51,9 +48,6 @@ health = NodePath("../../Health")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=869744447]
 sprite_frames = SubResource("SpriteFrames_oj5dg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1963569828]
-shape = SubResource("RectangleShape2D_vwim3")
 
 [node name="Health" parent="." unique_id=1988655922 instance=ExtResource("6_y2v7j")]
 health = 500.0

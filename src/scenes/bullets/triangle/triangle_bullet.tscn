@@ -27,6 +27,7 @@ script = ExtResource("1_46yy1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808318678]
 shape = SubResource("RectangleShape2D_ms86t")
+disabled = true
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1814507211]
 polygon = PackedVector2Array(-2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, -2.5)
