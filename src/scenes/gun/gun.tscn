@@ -4,3 +4,7 @@
 
 [node name="Gun" type="Node2D" unique_id=870551047]
 script = ExtResource("1_csbbp")
+
+[node name="Timer" type="Timer" parent="." unique_id=2017741294]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

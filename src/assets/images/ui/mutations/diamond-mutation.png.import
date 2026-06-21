@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmpswffogykev"
-path="res://.godot/imported/circle-red.png-06b75620ee02d312ffdf7e2da931518c.ctex"
+uid="uid://du8qe015hjo83"
+path="res://.godot/imported/diamond-mutation.png-bbfbbc30e019a11315a034c13a8ef11c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/mutations/circle-red.png"
-dest_files=["res://.godot/imported/circle-red.png-06b75620ee02d312ffdf7e2da931518c.ctex"]
+source_file="res://assets/images/ui/mutations/diamond-mutation.png"
+dest_files=["res://.godot/imported/diamond-mutation.png-bbfbbc30e019a11315a034c13a8ef11c.ctex"]
 
 [params]
 

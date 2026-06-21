@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ms86t"]
 size = Vector2(5, 5)
 
-[node name="Black Bullet" type="Area2D" unique_id=479000517]
+[node name="Star Bullet" type="Area2D" unique_id=479000517]
 script = ExtResource("1_2sm60")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808318678]
@@ -18,4 +18,4 @@ polygon = PackedVector2Array(-2.5, -2.5, -2.5, 2.5, 2.5, 2.5, 2.5, -2.5)
 
 [node name="HurtBox" parent="." unique_id=1840764264 instance=ExtResource("2_v21p7")]
 box_size = Vector2(5, 5)
-damage_source = 1
+damage_source = 3

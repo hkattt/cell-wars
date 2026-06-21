@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgnlsn6jotda5"
-path="res://.godot/imported/circle-green.png-9f8334466db8491a548d79f4c4b631cd.ctex"
+uid="uid://upj03441vj1i"
+path="res://.godot/imported/star-mutation.png-b1868c5599ed39e29bcd3db06743898c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/ui/mutations/circle-green.png"
-dest_files=["res://.godot/imported/circle-green.png-9f8334466db8491a548d79f4c4b631cd.ctex"]
+source_file="res://assets/images/ui/mutations/star-mutation.png"
+dest_files=["res://.godot/imported/star-mutation.png-b1868c5599ed39e29bcd3db06743898c.ctex"]
 
 [params]
 
